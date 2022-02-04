@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id?}"
 @model WebApp.Pages.SamplePages.BasicsModel
 @{
 	ViewData["Title"]="Review page basics";
@@ -13,3 +13,18 @@ else
 {
 	<p>@Model.MyName</p>
 }
+
+<h3>Demonstration of OnPost request processing for a form</h3>
+
+<form method="post">
+	<label>
+		Enter a number
+		<input type="number" asp-for="id" /><br />
+	</label>
+	<button type="submit" value="A" id="theButton" name="theButton">A Button</button>
+	&nbsp;&nbsp;
+	<button type="submit" value="B" id="theButton" name="theButton">B Button</button>
+
+</form>
+<br />
+<p style="color:forestgreen; font-weight:bold;">@Model.FeedBack</p>
